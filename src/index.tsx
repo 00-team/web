@@ -17,7 +17,7 @@ const App = () => {
     createEffect(() => {
         const loaderTimeout = setTimeout(() => {
             setisLoading(false);
-        }, 3000);
+        }, 30000);
 
         onCleanup(() => clearTimeout(loaderTimeout));
     });
