@@ -1,15 +1,23 @@
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />
-import { Header } from 'layout/header'
-import { render } from 'solid-js/web'
-import 'style/index.scss'
+import { Loading } from "layout";
+import { Home } from "screens/home";
+import { createEffect, createSignal, onCleanup } from "solid-js";
+import { render } from "solid-js/web";
+import "style/index.scss";
 
 const App = () => {
-    return (
-        <>
-            <Header />
-        </>
-    )
-}
+    const [isLoading, setisLoading] = createSignal(true);
 
-render(() => <App />, document.getElementById('root')!)
+    createEffect(() => {
+        const loaderTimeout = setTimeout(() => {
+            setisLoading(false);
+        }, 3000);
+
+        onCleanup(() => clearTimeout(loaderTimeout));
+    });
+
+    return <>{isLoading() ? <Loading /> : <Home />}</>;
+};
+
+render(() => <App />, document.getElementById("root")!);
