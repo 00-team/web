@@ -4,7 +4,12 @@ import { Loading } from "layout";
 import { Home } from "screens/home";
 import { createEffect, createSignal, onCleanup } from "solid-js";
 import { render } from "solid-js/web";
-import "style/index.scss";
+
+import "./style/base.scss";
+import "./style/components/buttons.scss";
+import "./style/config/index.scss";
+import "./style/font/imports.scss";
+import "./style/theme/index.scss";
 
 const App = () => {
     const [isLoading, setisLoading] = createSignal(true);
