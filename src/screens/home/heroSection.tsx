@@ -3587,7 +3587,23 @@ const HeroSection: Component = () => {
                     </defs>
                 </svg>
             </aside>
-            <aside class="hero-data"></aside>
+            <aside class="hero-data">
+                <header class="title_small">
+                    طراحی سایت
+                    {/* بیزینس
+                    شرکت
+                    شخصی */}
+                    را به ما بسپارید
+                </header>
+                <h1 class="title_hero skew-anim">
+                    دریافت حرفه ای ترین خدمات طراحی سایت
+                </h1>
+                <h2 class="title desc">
+                    تیم 00 با سابقه کاری بیش از 5 سال و بالای 50 سایت طراحی شده
+                    در خدمت شماست.
+                </h2>
+                <div class="cta-wrapper"></div>
+            </aside>
         </section>
     );
 };
