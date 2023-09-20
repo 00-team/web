@@ -3625,10 +3625,18 @@ const HeroSection: Component = () => {
                     <span>{typer()}</span>
                     {typer().length >= 1 && <div class="cursor"></div>}
                 </h2>
-                <div class="cta-wrapper"></div>
+                <div class="cta-wrapper">
+                    <button class="cta basic-button main title_smaller">
+                        ارتباط با ما
+                    </button>
+                    <button class="cta basic-button sec title_smaller">
+                        پروژه ها
+                    </button>
+                </div>
             </aside>
         </section>
     );
 };
 
 export { HeroSection };
+
