@@ -126,5 +126,46 @@ section.hero {
                 }
             }
         }
+
+        .cta-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2vw;
+
+            margin-top: 2vh;
+
+            .cta {
+                padding: 1rem 1.5rem;
+
+                background-color: var(--ten-percent);
+
+                transform: translateY(100%);
+                opacity: 0;
+
+                animation: cta-fadein 1s 6s cubic-bezier(0.45, 0.02, 0.09, 0.98)
+                    forwards;
+
+                @keyframes cta-fadein {
+                    from {
+                        transform: translateY(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+
+                &.main {
+                    border-radius: 7.5px;
+                }
+
+                &.sec {
+                    background-color: var(--primary-color);
+                    color: var(--accent-color);
+                    animation-delay: 6.2s;
+                }
+            }
+        }
     }
 }
