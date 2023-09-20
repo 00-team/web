@@ -1,8 +1,31 @@
-import { Component } from "solid-js";
+import { Component, createSignal, onCleanup } from "solid-js";
 
 import "./style/hero.scss";
 
 const HeroSection: Component = () => {
+    const [typer, setTyper] = createSignal("");
+
+    const title =
+        " تیم 00 با سابقه کاری بیش از 5 سال و بالای 50 سایت طراحی شده در خدمت شماست.";
+
+    title.split("");
+    let part = "";
+    let currentLetter = 0;
+
+    const interval = setTimeout(() => {
+        setInterval(() => {
+            if (!title[currentLetter]) {
+                clearInterval(interval);
+            } else {
+                part += title[currentLetter++];
+                setTyper(part);
+            }
+        }, 50);
+    }, 2000);
+
+    onCleanup(() => {
+        clearInterval(interval);
+    });
     return (
         <section class="hero">
             <aside class="svg-wrapper">
@@ -3599,8 +3622,8 @@ const HeroSection: Component = () => {
                     دریافت حرفه ای ترین خدمات طراحی سایت
                 </h1>
                 <h2 class="title desc">
-                    تیم 00 با سابقه کاری بیش از 5 سال و بالای 50 سایت طراحی شده
-                    در خدمت شماست.
+                    <span>{typer()}</span>
+                    {typer().length >= 1 && <div class="cursor"></div>}
                 </h2>
                 <div class="cta-wrapper"></div>
             </aside>
