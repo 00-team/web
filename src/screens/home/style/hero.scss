@@ -53,6 +53,100 @@ section.hero {
             margin-right: 4vw;
         }
 
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 1vmin;
+
+            .words {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                perspective: 1000px;
+                width: 100px;
+
+                position: relative;
+                isolation: isolate;
+
+                .word {
+                    &:not(.prev, .active, .next) {
+                        position: absolute;
+                        animation: word-disable 1s
+                            cubic-bezier(0.45, 0.02, 0.09, 0.98) forwards;
+
+                        @keyframes word-disable {
+                            from {
+                                filter: blur(1px);
+                                color: white;
+                                transform: translateY(-100%) rotateX(35deg);
+                            }
+                            to {
+                                opacity: 0;
+                                transform: translateY(-100%) rotateX(90deg)
+                                    scale(0);
+                                position: absolute;
+                            }
+                        }
+                    }
+
+                    &.prev,
+                    &.next {
+                        position: absolute;
+                        filter: blur(1px);
+                    }
+                    &.active {
+                        animation: word-active 3s
+                            cubic-bezier(0.45, 0.02, 0.09, 0.98) forwards;
+
+                        @keyframes word-active {
+                            from {
+                                filter: blur(1px);
+                                transform: translateY(100%) rotateX(-35deg);
+                            }
+                            to {
+                                color: var(--ten-percent);
+                                filter: blur(0px);
+                                transform: translateY(0) rotateX(0deg);
+                            }
+                        }
+                    }
+                    &.prev {
+                        animation: word-prev 3s
+                            cubic-bezier(0.45, 0.02, 0.09, 0.98) forwards;
+
+                        @keyframes word-prev {
+                            from {
+                                opacity: 0;
+                                transform: translateY(100%) rotateX(-90deg);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateY(100%) rotateX(-35deg);
+                            }
+                        }
+                    }
+                    &.next {
+                        animation: word-next 3s
+                            cubic-bezier(0.45, 0.02, 0.09, 0.98) forwards;
+
+                        @keyframes word-next {
+                            from {
+                                transform: translateY(0) rotateX(0deg);
+                                filter: blur(0px);
+                                color: var(--ten-percent);
+                            }
+                            to {
+                                filter: blur(1px);
+                                color: white;
+                                transform: translateY(-100%) rotateX(35deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         .skew-anim {
             transform: translateX(-2000px);
 
@@ -135,9 +229,10 @@ section.hero {
             margin-top: 2vh;
 
             .cta {
-                padding: 1rem 1.5rem;
+                padding: 1.2rem 2.2rem;
 
                 background-color: var(--ten-percent);
+                color: black;
 
                 transform: translateY(100%);
                 opacity: 0;
@@ -157,13 +252,12 @@ section.hero {
                 }
 
                 &.main {
-                    border-radius: 7.5px;
+                    border-radius: 10px;
                 }
 
                 &.sec {
-                    background-color: var(--primary-color);
-                    color: var(--accent-color);
                     animation-delay: 6.2s;
+                    border-radius: 10px;
                 }
             }
         }
