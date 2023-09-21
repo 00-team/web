@@ -277,7 +277,7 @@ section.hero {
                 }
 
                 &.sec {
-                    animation-delay: 6.2s;
+                    animation-delay: 6.1s;
                     border-radius: 10px;
                 }
             }
@@ -316,6 +316,11 @@ section.hero {
             position: relative;
             isolation: isolate;
 
+            transform: translateY(100%);
+            opacity: 0;
+            animation: feature-fadein 1s cubic-bezier(0.45, 0.02, 0.09, 0.98)
+                forwards;
+
             &:not(.active) {
                 transition: 0.2s ease-in;
             }
@@ -338,6 +343,17 @@ section.hero {
 
                 @media screen and (min-width: 768px) {
                     transform: translateX(-5.5px) skewX(8deg);
+                }
+            }
+
+            @keyframes feature-fadein {
+                from {
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
                 }
             }
         }
