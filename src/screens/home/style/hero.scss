@@ -8,11 +8,17 @@ section.hero {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
     position: relative;
     isolation: isolate;
 
     padding: 5vh 3vw;
+
+    @media screen and (max-width: 768px) {
+        height: auto;
+        row-gap: 8vh;
+    }
 
     &::after {
         content: "";
@@ -282,7 +288,7 @@ section.hero {
         position: absolute;
         bottom: 0;
         right: 50%;
-        transform: translateX(50%);
+        transform: translate(50%, 25%);
 
         width: 100%;
         display: flex;
@@ -292,7 +298,16 @@ section.hero {
         column-gap: calc(2vw + 5px);
         row-gap: calc(2vh + 5px);
 
+        perspective: 1000px;
+
         z-index: 1;
+
+        @media screen and (max-width: 768px) {
+            transform: translate(0, 0);
+            position: static;
+
+            width: 100%;
+        }
 
         .feature {
             width: clamp(0px, 100%, 250px);
@@ -300,6 +315,10 @@ section.hero {
 
             position: relative;
             isolation: isolate;
+
+            &:not(.active) {
+                transition: 0.2s ease-in;
+            }
 
             &::before {
                 content: "";
