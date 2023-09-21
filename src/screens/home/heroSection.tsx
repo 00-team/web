@@ -2,8 +2,11 @@ import { Component, createSignal, onCleanup } from "solid-js";
 
 import "./style/hero.scss";
 
+const words = ["بیزینس", "شرکت", "شخصی", "لورم", "ایپسوم"];
+
 const HeroSection: Component = () => {
     const [typer, setTyper] = createSignal("");
+    const [activeWord, setActiveWord] = createSignal(0);
 
     const title =
         " تیم 00 با سابقه کاری بیش از 5 سال و بالای 50 سایت طراحی شده در خدمت شماست.";
@@ -23,8 +26,18 @@ const HeroSection: Component = () => {
         }, 50);
     }, 2000);
 
+    const changeWord = setInterval(() => {
+        setActiveWord((value) => {
+            if (value + 2 > words.length) {
+                return 1;
+            }
+            return value + 1;
+        });
+    }, 3000);
+
     onCleanup(() => {
         clearInterval(interval);
+        clearInterval(changeWord);
     });
     return (
         <section class="hero">
@@ -3611,12 +3624,29 @@ const HeroSection: Component = () => {
                 </svg>
             </aside>
             <aside class="hero-data">
-                <header class="title_small">
+                <header class="title_small header">
                     طراحی سایت
-                    {/* بیزینس
-                    شرکت
-                    شخصی */}
-                    را به ما بسپارید
+                    <div class="words">
+                        {words.map((word, index) => {
+                            const returnClass = (): string => {
+                                if (activeWord() === index) return "active";
+                                if (activeWord() - 1 === index) return "next";
+                                if (activeWord() + 1 === index) return "prev";
+                                if (
+                                    activeWord() === words.length - 1 &&
+                                    index === 0
+                                )
+                                    return "prev";
+                                return "";
+                            };
+                            return (
+                                <div class={`word ${returnClass()}`}>
+                                    {word}
+                                </div>
+                            );
+                        })}
+                    </div>
+                    خود را را به ما بسپارید
                 </header>
                 <h1 class="title_hero skew-anim">
                     دریافت حرفه ای ترین خدمات طراحی سایت
@@ -3639,4 +3669,3 @@ const HeroSection: Component = () => {
 };
 
 export { HeroSection };
-
