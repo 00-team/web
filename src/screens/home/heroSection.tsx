@@ -3665,15 +3665,81 @@ const HeroSection: Component = () => {
                 </div>
             </aside>
             <div class="features">
-                <div class="feature">
+                <div
+                    class="feature"
+                    onmouseenter={(e) => {
+                        e.target.className += " active";
+                    }}
+                    onmousemove={(e) => {
+                        const pos = e.target.getBoundingClientRect();
+                        const mx = e.clientX - pos.left - pos.width / 2;
+                        const my = e.clientY - pos.top - pos.height / 2;
+
+                        e.currentTarget.style.transform = `
+                    translate(${mx * 0.07}px ,${my * 0.15}px)
+                    rotate3d(${mx * -0.05}, ${my * -0.15}, 0, 12deg)
+                `;
+                    }}
+                    onmouseleave={(e) => {
+                        e.currentTarget.style.transform = "";
+
+                        const currentClass = e.target.className;
+
+                        e.target.className = currentClass.replace("active", "");
+                    }}
+                >
                     <div class="svg-wrapper"></div>
                     <h3 class="title_small"></h3>
                 </div>
-                <div class="feature">
+                <div
+                    class="feature"
+                    onmouseenter={(e) => {
+                        e.target.className += " active";
+                    }}
+                    onmousemove={(e) => {
+                        const pos = e.target.getBoundingClientRect();
+                        const mx = e.clientX - pos.left - pos.width / 2;
+                        const my = e.clientY - pos.top - pos.height / 2;
+
+                        e.currentTarget.style.transform = `
+                    translate(${mx * 0.07}px ,${my * 0.15}px)
+                    rotate3d(${mx * -0.025}, ${my * -0.07}, 0, 12deg)
+                `;
+                    }}
+                    onmouseleave={(e) => {
+                        e.currentTarget.style.transform = "";
+
+                        const currentClass = e.target.className;
+
+                        e.target.className = currentClass.replace("active", "");
+                    }}
+                >
                     <div class="svg-wrapper"></div>
                     <h3 class="title_small"></h3>
                 </div>
-                <div class="feature">
+                <div
+                    class="feature"
+                    onmouseenter={(e) => {
+                        e.target.className += " active";
+                    }}
+                    onmousemove={(e) => {
+                        const pos = e.target.getBoundingClientRect();
+                        const mx = e.clientX - pos.left - pos.width / 2;
+                        const my = e.clientY - pos.top - pos.height / 2;
+
+                        e.currentTarget.style.transform = `
+                    translate(${mx * 0.07}px ,${my * 0.15}px)
+                    rotate3d(${mx * -0.05}, ${my * -0.15}, 0, 12deg)
+                `;
+                    }}
+                    onmouseleave={(e) => {
+                        e.currentTarget.style.transform = "";
+
+                        const currentClass = e.target.className;
+
+                        e.target.className = currentClass.replace("active", "");
+                    }}
+                >
                     <div class="svg-wrapper"></div>
                     <h3 class="title_small"></h3>
                 </div>
