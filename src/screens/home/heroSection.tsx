@@ -3667,6 +3667,7 @@ const HeroSection: Component = () => {
             <div class="features">
                 <div
                     class="feature"
+                    style={{ "animation-delay": "6.2s" }}
                     onmouseenter={(e) => {
                         e.target.className += " active";
                     }}
@@ -3693,6 +3694,7 @@ const HeroSection: Component = () => {
                 </div>
                 <div
                     class="feature"
+                    style={{ "animation-delay": "6.3s" }}
                     onmouseenter={(e) => {
                         e.target.className += " active";
                     }}
@@ -3719,6 +3721,7 @@ const HeroSection: Component = () => {
                 </div>
                 <div
                     class="feature"
+                    style={{ "animation-delay": "6.4s" }}
                     onmouseenter={(e) => {
                         e.target.className += " active";
                     }}
