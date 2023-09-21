@@ -3664,6 +3664,20 @@ const HeroSection: Component = () => {
                     </button>
                 </div>
             </aside>
+            <div class="features">
+                <div class="feature">
+                    <div class="svg-wrapper"></div>
+                    <h3 class="title_small"></h3>
+                </div>
+                <div class="feature">
+                    <div class="svg-wrapper"></div>
+                    <h3 class="title_small"></h3>
+                </div>
+                <div class="feature">
+                    <div class="svg-wrapper"></div>
+                    <h3 class="title_small"></h3>
+                </div>
+            </div>
         </section>
     );
 };
