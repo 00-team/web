@@ -318,6 +318,7 @@ section.hero {
 
             transform: translateY(100%);
             opacity: 0;
+
             animation: feature-fadein 1s cubic-bezier(0.45, 0.02, 0.09, 0.98)
                 forwards;
 
