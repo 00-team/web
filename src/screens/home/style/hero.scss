@@ -258,7 +258,7 @@ section.hero {
                 transform: translateY(100%);
                 opacity: 0;
 
-                animation: cta-fadein 1s 6s cubic-bezier(0.45, 0.02, 0.09, 0.98)
+                animation: cta-fadein 1s 2s cubic-bezier(0.45, 0.02, 0.09, 0.98)
                     forwards;
 
                 @keyframes cta-fadein {
@@ -277,7 +277,7 @@ section.hero {
                 }
 
                 &.sec {
-                    animation-delay: 6.1s;
+                    animation-delay: 2.1s;
                     border-radius: 10px;
                 }
             }
