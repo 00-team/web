@@ -3626,7 +3626,7 @@ const HeroSection: Component = () => {
             <aside class="hero-data">
                 <header class="title_small header">
                     طراحی سایت
-                    <div class="words">
+                    <div class="words title">
                         {words.map((word, index) => {
                             const returnClass = (): string => {
                                 if (activeWord() === index) return "active";
@@ -3689,8 +3689,40 @@ const HeroSection: Component = () => {
                         e.target.className = currentClass.replace("active", "");
                     }}
                 >
-                    <div class="svg-wrapper"></div>
-                    <h3 class="title_small"></h3>
+                    <div class="svg-wrapper">
+                        <svg
+                            stroke="currentColor"
+                            fill="none"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            height="1em"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                            ></path>
+                            <path d="M9 15l6 -6"></path>
+                            <circle
+                                cx="9.5"
+                                cy="9.5"
+                                r=".5"
+                                fill="currentColor"
+                            ></circle>
+                            <circle
+                                cx="14.5"
+                                cy="14.5"
+                                r=".5"
+                                fill="currentColor"
+                            ></circle>
+                            <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7a2.2 2.2 0 0 0 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1a2.2 2.2 0 0 0 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="title_small">قیمت مناسب</h3>
                 </div>
                 <div
                     class="feature"
@@ -3716,8 +3748,23 @@ const HeroSection: Component = () => {
                         e.target.className = currentClass.replace("active", "");
                     }}
                 >
-                    <div class="svg-wrapper"></div>
-                    <h3 class="title_small"></h3>
+                    <div class="svg-wrapper">
+                        <svg
+                            stroke="currentColor"
+                            fill="currentColor"
+                            stroke-width="0"
+                            viewBox="0 0 1024 1024"
+                            version="1.1"
+                            height="1em"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <defs></defs>
+                            <path d="M945 412H689c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h256c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM811 548H689c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h122c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM477.3 322.5H434c-6.2 0-11.2 5-11.2 11.2v248c0 3.6 1.7 6.9 4.6 9l148.9 108.6c5 3.6 12 2.6 15.6-2.4l25.7-35.1v-0.1c3.6-5 2.5-12-2.5-15.6l-126.7-91.6V333.7c0.1-6.2-5-11.2-11.1-11.2z"></path>
+                            <path d="M804.8 673.9H747c-5.6 0-10.9 2.9-13.9 7.7-12.7 20.1-27.5 38.7-44.5 55.7-29.3 29.3-63.4 52.3-101.3 68.3-39.3 16.6-81 25-124 25-43.1 0-84.8-8.4-124-25-37.9-16-72-39-101.3-68.3s-52.3-63.4-68.3-101.3c-16.6-39.2-25-80.9-25-124 0-43.1 8.4-84.7 25-124 16-37.9 39-72 68.3-101.3 29.3-29.3 63.4-52.3 101.3-68.3 39.2-16.6 81-25 124-25 43.1 0 84.8 8.4 124 25 37.9 16 72 39 101.3 68.3 17 17 31.8 35.6 44.5 55.7 3 4.8 8.3 7.7 13.9 7.7h57.8c6.9 0 11.3-7.2 8.2-13.3-65.2-129.7-197.4-214-345-215.7-216.1-2.7-395.6 174.2-396 390.1C71.6 727.5 246.9 903 463.2 903c149.5 0 283.9-84.6 349.8-215.8 3.1-6.1-1.4-13.3-8.2-13.3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="title_small">تحویل در کمترین زمان</h3>
                 </div>
                 <div
                     class="feature"
@@ -3743,8 +3790,20 @@ const HeroSection: Component = () => {
                         e.target.className = currentClass.replace("active", "");
                     }}
                 >
-                    <div class="svg-wrapper"></div>
-                    <h3 class="title_small"></h3>
+                    <div class="svg-wrapper">
+                        <svg
+                            stroke="currentColor"
+                            fill="currentColor"
+                            stroke-width="0"
+                            viewBox="0 0 24 24"
+                            height="1em"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M12 2C6.486 2 2 6.486 2 12v4.143C2 17.167 2.897 18 4 18h1a1 1 0 0 0 1-1v-5.143a1 1 0 0 0-1-1h-.908C4.648 6.987 7.978 4 12 4s7.352 2.987 7.908 6.857H19a1 1 0 0 0-1 1V18c0 1.103-.897 2-2 2h-2v-1h-4v3h6c2.206 0 4-1.794 4-4 1.103 0 2-.833 2-1.857V12c0-5.514-4.486-10-10-10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="title_small">پشتیبانی 24 ساعته</h3>
                 </div>
             </div>
         </section>
