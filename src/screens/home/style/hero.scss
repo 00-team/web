@@ -306,6 +306,10 @@ section.hero {
                 &.sec {
                     animation-delay: 2.1s;
                     border-radius: 10px;
+
+                    background: transparent;
+                    border: 3px solid var(--ten-percent);
+                    color: white;
                 }
             }
         }
